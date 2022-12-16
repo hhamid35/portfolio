@@ -86,12 +86,12 @@ function Particle() {
                 },
                 interactivity: {
                     events: {
-                        onhover: {
+                        onHover: {
                             enable: true,
                             mode: ['grab']
                         },
-                        onclick: {
-                            enable: true,
+                        onClick: {
+                            enable: false,
                             mode: 'push'
                         },
                         resize: true
