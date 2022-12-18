@@ -518,15 +518,15 @@ html {
   }
   
   .btn-primary {
-    color: #fff !important;
-    background-color: #623686 !important;
-    border-color: #623686 !important;
+    color: rgb(255, 255, 255) !important;
+    background-color: #ffffff !important;
+    border-color: #92909286 !important;
   }
   
   .btn-primary:hover {
     color: #fff !important;
-    background-color: #6d20c5d7 !important;
-    border-color: #6d20c5d7 !important;
+    background-color: #92909286 !important;
+    border-color: #92909286 !important;
   }
   .btn:focus {
     outline: none !important;
@@ -609,6 +609,7 @@ html {
     padding-bottom: 30px !important;
     background-image: var(--section-background-color) !important;
     color: white !important;
+    margin-bottom: 5vh;
   }
   
   .resume {
