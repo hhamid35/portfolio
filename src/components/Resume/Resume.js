@@ -17,6 +17,15 @@ function Resume() {
         setWidth(window.innerWidth);
     }, []);
 
+    const removeTextLayerOffset = () => {
+        console.log('onLoadSuccess');
+        const textLayers = document.querySelectorAll(".react-pdf__Page__textContent");
+        textLayers.forEach(layer => {
+            const { style } = layer;
+            style.display = 'none';
+        });
+    }
+
     return (
         <div>
             <Container fluid className='resume-section'>
@@ -28,13 +37,13 @@ function Resume() {
                         target='_blank'
                         style={{ maxWidth: '250px' }}
                     >
-                        <AiOutlineDownload />
-                        &nbsp;Download Resume
+                        <AiOutlineDownload style={{ color: 'black' }} />
+                        <span style={{ fontSize: '1.2em', color: 'black' }} >&nbsp;Download Resume</span>
                     </Button>
                 </Row>
                 <Row className='resume'>
                     <Document file={ resumeLink } className='d-flex justify-content-center'>
-                        <Page wrap={false} pageNumber={1} scale={ width > 786 ? 1.7 : 0.6 } />
+                        <Page onLoadSuccess={removeTextLayerOffset} wrap={false} pageNumber={1} scale={ width > 786 ? 1.7 : 0.6 } />
                     </Document>
                 </Row>
                 <Row style={{ justifyContent: 'center', position: 'relative' }}>
@@ -44,8 +53,8 @@ function Resume() {
                         target='_blank'
                         style={{ maxWidth: '250px' }}
                     >
-                        <AiOutlineDownload />
-                        &nbsp;Download Resume
+                        <AiOutlineDownload style={{ color: 'black' }} />
+                        <span style={{ fontSize: '1.2em', color: 'black' }} >&nbsp;Download Resume</span>
                     </Button>
                 </Row>
             </Container>
